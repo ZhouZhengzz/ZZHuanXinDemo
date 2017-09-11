@@ -1,0 +1,48 @@
+//
+//  PrefixHeader.pch
+//  HuanXinDemo
+//
+//  Created by zhouzheng on 2017/6/15.
+//  Copyright © 2017年 zhouzheng. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixHeader_pch */
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+//#import "ChatDemoUIDefine.h"
+//#import "EMAlertView.h"
+//#import "TTGlobalUICommon.h"
+
+
+#define ScreenWidth  [UIScreen mainScreen].bounds.size.width
+#define ScreenHeight [UIScreen mainScreen].bounds.size.height
+
+#define NavHeight     64
+#define TabbarHeight  49
+
+//宽高比定义  roundf 四舍五入函数
+#define ActureHeight(_height)  roundf(_height/375.0 * ScreenWidth)
+#define ActureHeightV(_height) roundf(_height/667.0 * ScreenHeight)
+
+#define weak(weakself)  __weak __typeof(&*self)weakself = self
+
+#import "EaseUI.h"
+
+#define DEMO_CALL 1
+
+#if DEMO_CALL == 1
+#import <Hyphenate/Hyphenate.h>
+#else
+#import <HyphenateLite/HyphenateLite.h>
+#endif
+
+#endif
